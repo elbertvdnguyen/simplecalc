@@ -1,3 +1,7 @@
 # Meant to be deleted
 
 # Directory for class diagrams for docu purposes
+
+Description for Decorator Pattern:
+This Pattern is optimized for adding additional functionality to our existing calculator. Our existing calculator is able to perform standard operations on user provided operands. Using a getEvaluate() function, we are able to get the result. With an abstract AdditionalFeatures component, we are able to add conversions into the mix. We can convert the answer into Radians or convert the answer into Degrees.
+
