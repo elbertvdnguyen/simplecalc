@@ -1,0 +1,3 @@
+# Meant to be deleted
+
+# Directory for class diagrams for docu purposes
