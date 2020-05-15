@@ -15,3 +15,15 @@ We will be coding this calculator in C++.
 ### Input/output of the project?
 - Input: Two numbers and a choice of computation (addition/subtraction/division/multiplicaton)
 - Output: The result from the computation
+### Design Patterns:
+![Decorator Pattern](https://github.com/cs100/final-project-elbert-ken-franz/blob/master/class_diagrams/DecoratorPatternFinalProject.jpg)
+This Pattern is optimized for adding additional functionality to our existing calculator. 
+Our existing calculator is able to perform standard operations on user provided operands. 
+Using a getEvaluate() function, we are able to get the result. 
+With an abstract AdditionalFeatures component, we are able to add conversions into the mix. 
+We can convert the answer into Radians or convert the answer into Degrees.
+![Strategy Pattern](https://github.com/cs100/final-project-elbert-ken-franz/blob/master/class_diagrams/StrategyPatternFinalProject.jpg)
+This pattern is created to get the very basic objects and algorithms for our existing calculator working.
+Our existing calculator after implementing the strategy pattern will be able to do the following functions:
+Multiply, Divide, Add, Subtract, Power, and Modulo. 
+Alongside that, we will have an abstract evaluate component so that we can implement more functions if needed.
