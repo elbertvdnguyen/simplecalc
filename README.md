@@ -15,7 +15,7 @@ We will be coding this calculator in C++.
 ### Input/output of the project?
 - Input: Two numbers and a choice of computation (addition/subtraction/division/multiplicaton)
 - Output: The result from the computation
-### Design Patterns:
+## Design Patterns
 ### Decorator Pattern
 ![Decorator Pattern](https://github.com/cs100/final-project-elbert-ken-franz/blob/master/class_diagrams/DecoratorPatternFinalProject.jpg)
 This Pattern is optimized for adding additional functionality to our existing calculator. 
