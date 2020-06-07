@@ -8,13 +8,26 @@
 using namespace std;
 
 	Calc::Calc(){
-		cout << "Initializing Calculator" << endl;
+	string initialStart = "Initializing Simple Calc. Please wait.";
+	string twentyFivePercent = "[||||            ]";
+	string fiftyPercent = "[||||||||        ]";
+	string seventyFivePercent = "[||||||||||||    ]";
+	string hundredPercent = "[||||||||||||||||]";
+	string initialComplete =  "Initlization Complete.";
+	string switchUser = "Switching to User Interface.";
+	string welcomeUser = "Welcome to Simple Calc.";
+	string borderWelcome = "=======================";
+		cout << initialStart << endl;
 		valOne = 0;
+		cout << twentyFivePercent << endl;
 		valTwo = 0;
+		cout << fiftyPercent << endl;
 		saveAns = 0;
+		cout << seventyFivePercent << endl;
 		valModOne = 0;
 		valModTwo = 0;
-		cout << "Initlization Complete. Welcome to Simple Calc." << endl;
+		cout << hundredPercent << endl;
+		cout << initialComplete << endl << switchUser << endl << borderWelcome << endl << welcomeUser << endl << borderWelcome << endl;
 	}
         void Calc::add(double numOne, double numTwo){
 		valOne = numOne;
