@@ -13,6 +13,7 @@ class Calc{
 	double ValTwo = 0;
 	double saveAns = 0;
 	public:
+	Calc();
 	double add(double, double);
 	double add(double);
 	double sub(double, double);

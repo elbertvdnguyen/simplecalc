@@ -13,6 +13,13 @@ class Calc{
 	string promptCalc = "Enter an equation (Use an operator to use a previous answer.) (q to quit): ";
 	string invalidInput = "Input is not a number or operator.";
         public:
+	Calc(){
+		cout << "Initializing Calculator" << endl;
+		valOne = 0;
+		valTwo = 0;
+		saveAns = 0;
+		cout << "Initlization Complete. Welcome to Simple Calc." << endl;
+	}
         void add(double numOne, double numTwo){
 		valOne = numOne;
 		valTwo = numTwo;
