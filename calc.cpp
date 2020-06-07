@@ -114,7 +114,9 @@ using namespace std;
         void Calc::mod(int numOne, int numTwo){
 		valModOne = numOne;
                 valModTwo = numTwo;
-                op = '%';
+                valOne = valModOne;
+		valTwo = valModTwo;
+		op = '%';
                 saveAns = valModOne % valModTwo;
                 print();
                 return;
@@ -122,6 +124,8 @@ using namespace std;
         void Calc::mod(int numTwo){
 		valModOne = saveAns;
                 valModTwo = numTwo;
+		valOne = valModOne;
+		valTwo = valModTwo;
                 op = '%';
                 saveAns = valModOne % valModTwo;
                 print();
