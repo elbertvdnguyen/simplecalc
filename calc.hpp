@@ -26,6 +26,10 @@ class Calc{
         string switchUser = "Switching to User Interface.";
         string welcomeUser = "Welcome to SimpleCalc.";
         string borderWelcome = "=======================";
+	string quitInput = "Quit command detected. Preparing to shut down.";
+	string quitComplete = "Shut down complete.";
+	string quitMessage = "Thank you for using SimpleCalc! Goodbye!";
+	string borderQuit = "========================================";
 	public:
 	Calc();
 	void add(double, double);
