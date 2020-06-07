@@ -10,24 +10,31 @@ using namespace std;
 class Calc{
 	private:
 	double valOne = 0;
-	double ValTwo = 0;
+	double valTwo = 0;
+	int valModOne = 0;
+	int valModTwo = 0;
 	double saveAns = 0;
+	string op = "";
+        string promptCalc = "Enter an equation (Use an operator to use a previous answer.) (q to quit): ";
+        string invalidInput = "Input is not a number or operator.";
+
 	public:
 	Calc();
-	double add(double, double);
-	double add(double);
-	double sub(double, double);
-	double sub(double);
-	double mult(double, double);
-	double mult(double);
-	double div(double, double);
-	double div(double);
-	double pow(double, double);
-	double pow(double);
-	double mod(double, double);
-	double mod(double);
-	void evaluate();
+	void add(double, double);
+	void add(double);
+	void sub(double, double);
+	void sub(double);
+	void mult(double, double);
+	void mult(double);
+	void div(double, double);
+	void div(double);
+	void power(double, double);
+	void power(double);
+	void mod(int, int);
+	void mod(int);
+	double evaluate();
 	void getOp();
-	void display();		
-}
+	void display();
+	void print();		
+};
 #endif

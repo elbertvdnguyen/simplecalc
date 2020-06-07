@@ -1,26 +1,22 @@
-#include "calc.hpp"
 #include <iostream>
 #include <cmath>
 #include <string>
 #include <math.h>
 
-class Calc{
-        private:
-	double valOne = 0;
-	double valTwo = 0;
-        double saveAns = 0;
-	string op = "";
-	string promptCalc = "Enter an equation (Use an operator to use a previous answer.) (q to quit): ";
-	string invalidInput = "Input is not a number or operator.";
-        public:
-	Calc(){
+#include "calc.hpp"
+
+using namespace std;
+
+	Calc::Calc(){
 		cout << "Initializing Calculator" << endl;
 		valOne = 0;
 		valTwo = 0;
 		saveAns = 0;
+		valModOne = 0;
+		valModTwo = 0;
 		cout << "Initlization Complete. Welcome to Simple Calc." << endl;
 	}
-        void add(double numOne, double numTwo){
+        void Calc::add(double numOne, double numTwo){
 		valOne = numOne;
 		valTwo = numTwo;
 		op = "+";
@@ -28,7 +24,7 @@ class Calc{
 		print();
 		return;	
 	}
-        void add(double numTwo){
+        void Calc::add(double numTwo){
 		valOne = saveAns;
 		valTwo = numTwo;
 		op = "+";
@@ -36,7 +32,7 @@ class Calc{
 		print();
 		return;
 	}
-        void sub(double numOne, double numTwo){
+        void Calc::sub(double numOne, double numTwo){
 		valOne = numOne;
                 valTwo = numTwo;
                 op = "-";
@@ -44,7 +40,7 @@ class Calc{
                 print();
                 return;
 	}
-        void sub(double numTwo){
+        void Calc::sub(double numTwo){
 		valOne = saveAns;
 		valTwo = numTwo;
 		op = "-";
@@ -52,7 +48,7 @@ class Calc{
 		print();
 		return;
 	}
-        void mult(double numOne, double numTwo){
+        void Calc::mult(double numOne, double numTwo){
 		valOne = numOne;
                 valTwo = numTwo;
                 op = "*";
@@ -60,7 +56,7 @@ class Calc{
                 print();
                 return;
 	}
-        void mult(double numTwo){
+        void Calc::mult(double numTwo){
 		valOne = saveAns;
                 valTwo = numTwo;
                 op = "*";
@@ -68,7 +64,7 @@ class Calc{
                 print();
                 return;
 	}
-        void div(double numOne, double numTwo){
+        void Calc::div(double numOne, double numTwo){
 		valOne = numOne;
                 valTwo = numTwo;
                 op = "/";
@@ -76,7 +72,7 @@ class Calc{
                 print();
                 return;
 	}
-        void div(double numTwo){
+        void Calc::div(double numTwo){
 		valOne = saveAns;
                 valTwo = numTwo;
                 op = "/";
@@ -84,7 +80,7 @@ class Calc{
                 print();
                 return;
 	}
-        void pow(double numOne, double numTwo){
+        void Calc::power(double numOne, double numTwo){
 		valOne = numOne;
                 valTwo = numTwo;
                 op = "**";
@@ -93,7 +89,7 @@ class Calc{
                 return;
 
 	}
-        void pow(double numTwo){
+        void Calc::power(double numTwo){
 		valOne = saveAns;
                 valTwo = numTwo;
                 op = "**";
@@ -102,26 +98,33 @@ class Calc{
                 return;
 
 	}
-        void mod(double, double){
-		valOne = numOne;
-                valTwo = numTwo;
+        void Calc::mod(int numOne, int numTwo){
+		valModOne = numOne;
+                valModTwo = numTwo;
                 op = '%';
-                saveAns = valOne % valTwo;
+                saveAns = valModOne % valModTwo;
                 print();
                 return;
 	}
-        void mod(double){
-		valOne = saveAns;
-                valTwo = numTwo;
+        void Calc::mod(int numTwo){
+		valModOne = saveAns;
+                valModTwo = numTwo;
                 op = '%';
-                saveAns = valOne % valTwo;
+                saveAns = valModOne % valModTwo;
                 print();
                 return;
 	}
-        void evaluate();
-        void getOp();
-	void display();
-        void print(){
-		cout << valOne << op << valTwo << saveAns << endl;
+        double Calc::evaluate(){
+		return saveAns;
 	}
-}
+        void Calc::getOp(){
+		return;
+	}
+	void Calc::display(){
+		return;
+	}
+	void Calc::print(){
+                cout << valOne << " " << op << " " << valTwo << " = " << saveAns << endl;
+                return;
+        }
+
