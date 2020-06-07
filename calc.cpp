@@ -8,15 +8,6 @@
 using namespace std;
 
 	Calc::Calc(){
-	string initialStart = "Initializing SimpleCalc. Please wait.";
-	string twentyFivePercent = "[||||            ]";
-	string fiftyPercent = "[||||||||        ]";
-	string seventyFivePercent = "[||||||||||||    ]";
-	string hundredPercent = "[||||||||||||||||]";
-	string initialComplete =  "Initlization Complete.";
-	string switchUser = "Switching to User Interface.";
-	string welcomeUser = "Welcome to SimpleCalc.";
-	string borderWelcome = "=======================";
 		cout << initialStart << endl;
 		valOne = 0;
 		cout << twentyFivePercent << endl;
