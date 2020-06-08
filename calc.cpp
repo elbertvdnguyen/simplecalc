@@ -132,6 +132,7 @@ using namespace std;
 		else if(userInput == '5') {
 			cout << quitInput << "\n" << hundredPercent << "\n" << seventyFivePercent << "\n" << fiftyPercent << "\n" << twentyFivePercent << endl;
 			cout << quitComplete << "\n" << quitMessage << "\n" << borderQuit << endl;
+			exit(1);
 		} else if (userInput == '1') {
 			cout << "You have chosen basic arithmetic. Which operation would you like to perform?\n" << endl;
 			cout << "1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n";
@@ -140,8 +141,69 @@ using namespace std;
 			else if (userInput == '1') {
 				cout << "Addition. One or two inputs?\n";
 				cout << "1. One input\n2. Two inputs\n";
-				 
-	}
+				cin >> userInput;
+				if (!isdigit(userInput)) { cout << invalidInput; }
+				else if (userInput == '1') {
+					cin >> userInput;
+					value = stod(userInput);
+					add(value);
+				} else if (userInput == '2') {
+					cin >> userInput;
+					value1 = stod(userInput);
+					cin >> userInput;
+					value2 = stod(userInput);
+					add(value1, value2);
+				}
+			} else if (userInput == '2') {
+				cout << "Subtraction. One or two inputs?\n";
+                                cout << "1. One input\n2. Two inputs\n";
+                                cin >> userInput;
+                                if (!isdigit(userInput)) { cout << invalidInput; }
+                                else if (userInput == '1') {
+                                        cin >> userInput;
+                                        value = stod(userInput);
+                                        sub(value);
+                                } else if (userInput == '2') {
+                                        cin >> userInput;
+                                        value1 = stod(userInput);
+                                        cin >> userInput;
+                                        value2 = stod(userInput);
+                                        sub(value1, value2);
+				}
+			} else if (userInput == '3') {
+				cout << "Multiplication. One or two inputs?\n";
+                                cout << "1. One input\n2. Two inputs\n";
+                                cin >> userInput;
+                                if (!isdigit(userInput)) { cout << invalidInput; }
+                                else if (userInput == '1') {
+                                        cin >> userInput;
+                                        value = stod(userInput);
+                                        mult(value);
+                                } else if (userInput == '2') {
+                                        cin >> userInput;
+                                        value1 = stod(userInput);
+                                        cin >> userInput;
+                                        value2 = stod(userInput);
+                                        mult(value1, value2);
+				}
+			} else if (userInput == '4') {
+				cout << "Division. One or two inputs?\n";
+                                cout << "1. One input\n2. Two inputs\n";
+                                cin >> userInput;
+                                if (!isdigit(userInput)) { cout << invalidInput; }
+                                else if (userInput == '1') {
+                                        cin >> userInput;
+                                        value = stod(userInput);
+                                        div(value);
+                                } else if (userInput == '2') {
+                                        cin >> userInput;
+                                        value1 = stod(userInput);
+                                        cin >> userInput;
+                                        value2 = stod(userInput);
+                                        div(value1, value2);
+				}
+			}
+	}						
 	void Calc::print(){
                 cout << valOne << " " << op << " " << valTwo << " = " << saveAns << endl;
                 return;
