@@ -18,7 +18,9 @@ using namespace std;
 		valModOne = 0;
 		valModTwo = 0;
 		cout << hundredPercent << endl;
-		cout << initialComplete << endl << switchUser << endl << borderWelcome << endl << welcomeUser << endl << borderWelcome << endl;
+		cout << initialComplete << endl << switchUser << endl;
+		cout << borderWelcome << endl << welcomeUser << endl; 
+		cout << borderWelcome << endl;
 	}
         void Calc::add(double numOne, double numTwo){
 		valOne = numOne;
@@ -135,4 +137,3 @@ using namespace std;
                 cout << valOne << " " << op << " " << valTwo << " = " << saveAns << endl;
                 return;
         }
-
