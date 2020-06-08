@@ -203,7 +203,9 @@ using namespace std;
                                         div(value1, value2);
 				}
 			}
-	}						
+	} else if (userInput == '2') {
+		cout << "You have chosen advanced arithmetic. Which operation would you like to perform?\n";
+	}
 	void Calc::print(){
                 cout << valOne << " " << op << " " << valTwo << " = " << saveAns << endl;
                 return;
