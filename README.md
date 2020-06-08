@@ -31,4 +31,7 @@ Multiply, Divide, Add, Subtract, Power, and Modulo.
 Alongside that, we will have an abstract evaluate component so that we can implement more functions if needed.
 ### Factory Pattern
 ![Factory Pattern](https://github.com/cs100/final-project-elbert-ken-franz/blob/master/class_diagrams/Factory-Pattern-UML.jpg)
-The factory pattern diagram (above) demonstrates the final expected functionality of our application. The calculator calls a function, createExpression, that creates an object representing an equation using one of the calculator's functions (Add, Sub, Multiply, etc.).
+The factory pattern diagram (above) demonstrates the final expected functionality of our application.
+Once the application loads up, it begins to take input from user.
+Function getInput() checks the inputs from user to determine if it's valid, and performs numerous checks from there to call and calculate.
+The display() function outputs the equation user inputs, then outputs answer.
