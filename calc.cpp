@@ -15,8 +15,6 @@ using namespace std;
 		cout << fiftyPercent << endl;
 		saveAns = 0;
 		cout << seventyFivePercent << endl;
-		valModOne = 0;
-		valModTwo = 0;
 		cout << hundredPercent << endl;
 		cout << initialComplete << endl << switchUser << endl;
 		cout << borderWelcome << endl << welcomeUser << endl; 
@@ -104,23 +102,19 @@ using namespace std;
                 return;
 
 	}
-        void Calc::mod(int numOne, int numTwo){
-		valModOne = numOne;
-                valModTwo = numTwo;
-                valOne = valModOne;
-		valTwo = valModTwo;
+        void Calc::mod(double numOne, double numTwo){
+		valOne = numOne;
+                valTwo = numTwo;
 		op = '%';
-                saveAns = valModOne % valModTwo;
+                saveAns = fmod(valOne, valTwo);
                 print();
                 return;
 	}
-        void Calc::mod(int numTwo){
-		valModOne = saveAns;
-                valModTwo = numTwo;
-		valOne = valModOne;
-		valTwo = valModTwo;
+        void Calc::mod(double numTwo){
+		valOne = saveAns;
+                valTwo = numTwo;
                 op = '%';
-                saveAns = valModOne % valModTwo;
+                saveAns = fmod(valOne, valTwo);
                 print();
                 return;
 	}
