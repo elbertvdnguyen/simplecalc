@@ -9,21 +9,21 @@ using namespace std;
 
 class Calc{
 	private:
-    double valOne = 0;
+    		double valOne = 0;
 		double valTwo = 0;
 		double saveAns = 0;
 		string op = "";
-	  string promptCalc = "Enter an equation (Use an operator to use a previous answer.) (q to quit): ";
-	  string invalidInput = "Input is not a number or operator.";
+	  	string promptCalc = "Enter an equation (Use an operator to use a previous answer.) (q to quit): ";
+	  	string invalidInput = "Input is not a number or operator.";
 		string initialStart = "Initializing SimpleCalc. Please wait.";
-	  string twentyFivePercent = "[||||            ]";
-	  string fiftyPercent = "[||||||||        ]";
-	  string seventyFivePercent = "[||||||||||||    ]";
-    string hundredPercent = "[||||||||||||||||]";
-    string initialComplete =  "Initlization Complete.";
-    string switchUser = "Switching to User Interface.";
-    string welcomeUser = "Welcome to SimpleCalc.";
-    string borderWelcome = "=======================";
+	  	string twentyFivePercent = "[||||            ]";
+	  	string fiftyPercent = "[||||||||        ]";
+	 	string seventyFivePercent = "[||||||||||||    ]";
+    		string hundredPercent = "[||||||||||||||||]";
+    		string initialComplete =  "Initlization Complete.";
+    		string switchUser = "Switching to User Interface.";
+    		string welcomeUser = "Welcome to SimpleCalc.";
+    		string borderWelcome = "=======================";
 		string quitInput = "Quit command detected. Preparing to shut down.";
 		string quitComplete = "Shut down complete.";
 		string quitMessage = "Thank you for using SimpleCalc! Goodbye!";
@@ -40,8 +40,8 @@ class Calc{
 		void div(double);
 		void power(double, double);
 		void power(double);
-		void mod(int, int);
-		void mod(int);
+		void mod(double, double);
+		void mod(double);
 		double evaluate();
 		void getOp();
 		void display();
