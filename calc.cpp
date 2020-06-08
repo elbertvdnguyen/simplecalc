@@ -191,7 +191,7 @@ using namespace std;
                                         mult(value);
                                 } else if (userInput == '2') {
                                         cin >> value1 >> value2;
-                                        mult(value1, value2);
+					mult(value1, value2);
 				}
 			} else if (userInput == '4') {
 				cout << "Division. One or two inputs?\n";
@@ -206,7 +206,7 @@ using namespace std;
                                         div(value1, value2);
 				}
 			}
-	} else if (userInput == '2') {
+		} else if (userInput == '2') {
 		cout << "You have chosen advanced arithmetic. Which operation would you like to perform?\n";
 		cout << "1. Pow\n2. Modulo\n";
 		cin >> userInput;
