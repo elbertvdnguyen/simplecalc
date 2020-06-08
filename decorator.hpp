@@ -62,4 +62,31 @@ class TangentCalculation : public Decorator {
 
 };
 
+class ArcSineCalculation : public Decorator {
+	public:
+		ArcSineCalculation(Calc* calc);
+		virtual double evaluate();
+
+
+};
+
+class ArcCosineCalculation : public Decorator {
+	public:
+		ArcCosineCalculation(Calc* calc);
+		virtual double evaluate();
+
+
+
+};
+
+class ArcTangentCalculation : public Decorator {
+	public:
+		ArcTangentCalculation(Calc* calc);
+		virtual double evaluate();
+
+
+
+};
+
+
 #endif //DECORATOR_HPP

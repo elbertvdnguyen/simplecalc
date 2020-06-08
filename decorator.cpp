@@ -57,8 +57,23 @@ double TangentCalculation::evaluate(){
 
 }
 
+ArcSineCalculation::ArcSineCalculation(Calc* calc) : Decorator(calc){};
+double ArcSineCalculation::evaluate(){
+	return asin(get_calc()->evaluate());
 
+}
 
+ArcCosineCalculation::ArcCosineCalculation(Calc* calc) : Decorator(calc){};
+double ArcCosineCalculation::evaluate(){
+	return acos(get_calc()->evaluate());
+
+}
+
+ArcTangentCalculation::ArcTangentCalculation(Calc* calc) : Decorator(calc){};
+double ArcTangentCalculation::evaluate(){
+	return atan(get_calc()->evaluate());
+
+}
 
 
 
