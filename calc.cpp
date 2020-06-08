@@ -1,20 +1,34 @@
+#include "calc.hpp"
+
 #include <iostream>
 #include <cmath>
 #include <string>
 #include <math.h>
+#include <unistd.h>
+#include <ctime>
+#include <cstdlib>
 
-#include "calc.hpp"
-
+// #include <stdio.h>      /* printf, NULL */
+// #include <stdlib.h>     /* srand, rand */
+// #include <time.h>
 using namespace std;
 
 	Calc::Calc(){
+		srand(time(0));
+		
 		cout << initialStart << endl;
+		sleep(1);
+		cout << zeroPercent << endl;
 		valOne = 0;
+		sleep((rand() % 3) + 1);
 		cout << twentyFivePercent << endl;
 		valTwo = 0;
+		sleep((rand() % 3) + 1);
 		cout << fiftyPercent << endl;
 		saveAns = 0;
+		sleep((rand() % 3) + 1);
 		cout << seventyFivePercent << endl;
+		sleep((rand() % 3) + 1);
 		cout << hundredPercent << endl;
 		cout << initialComplete << endl << switchUser << endl;
 		cout << borderWelcome << endl << welcomeUser << endl; 
@@ -121,17 +135,22 @@ using namespace std;
         double Calc::evaluate(){
 		return saveAns;
 	}
-        void Calc::getOp(){
+        /* void Calc::getOp(){
 		return op;
-	}
+	} */
 	void Calc::display() {
-		cout << welcomeUser << "Which operation would you like to perform?\n" << endl;
+		char userInput;
+		double value1 = 0.0;
+		double value2 = 0.0;
+		double value = 0.0;
+		
+		cout << "Which operation would you like to perform?\n" << endl;
 		cout << "1. Basic Arithmetic\n2. Advanced Arithmetic\n3. Trigonometric Functions\n4. Conversions\n5. Quit" << endl;
 		cin >> userInput;
 		if (!isdigit(userInput)) { cout << invalidInput; }
 		else if(userInput == '5') {
 			cout << quitInput << "\n" << hundredPercent << "\n" << seventyFivePercent << "\n" << fiftyPercent << "\n" << twentyFivePercent << endl;
-			cout << quitComplete << "\n" << quitMessage << "\n" << borderQuit << endl;
+			cout << quitComplete << "\n" << borderQuit << "\n" << quitMessage << "\n" << borderQuit << endl;
 			exit(1);
 		} else if (userInput == '1') {
 			cout << "You have chosen basic arithmetic. Which operation would you like to perform?\n" << endl;
@@ -144,14 +163,10 @@ using namespace std;
 				cin >> userInput;
 				if (!isdigit(userInput)) { cout << invalidInput; }
 				else if (userInput == '1') {
-					cin >> userInput;
-					value = stod(userInput);
+					cin >> value;
 					add(value);
 				} else if (userInput == '2') {
-					cin >> userInput;
-					value1 = stod(userInput);
-					cin >> userInput;
-					value2 = stod(userInput);
+					cin >> value1 >> value2;
 					add(value1, value2);
 				}
 			} else if (userInput == '2') {
@@ -160,14 +175,10 @@ using namespace std;
                                 cin >> userInput;
                                 if (!isdigit(userInput)) { cout << invalidInput; }
                                 else if (userInput == '1') {
-                                        cin >> userInput;
-                                        value = stod(userInput);
+					cin >> value;
                                         sub(value);
                                 } else if (userInput == '2') {
-                                        cin >> userInput;
-                                        value1 = stod(userInput);
-                                        cin >> userInput;
-                                        value2 = stod(userInput);
+					cin >> value1 >> value2;
                                         sub(value1, value2);
 				}
 			} else if (userInput == '3') {
@@ -176,14 +187,10 @@ using namespace std;
                                 cin >> userInput;
                                 if (!isdigit(userInput)) { cout << invalidInput; }
                                 else if (userInput == '1') {
-                                        cin >> userInput;
-                                        value = stod(userInput);
+                                        cin >> value;
                                         mult(value);
                                 } else if (userInput == '2') {
-                                        cin >> userInput;
-                                        value1 = stod(userInput);
-                                        cin >> userInput;
-                                        value2 = stod(userInput);
+                                        cin >> value1 >> value2;
                                         mult(value1, value2);
 				}
 			} else if (userInput == '4') {
@@ -192,19 +199,44 @@ using namespace std;
                                 cin >> userInput;
                                 if (!isdigit(userInput)) { cout << invalidInput; }
                                 else if (userInput == '1') {
-                                        cin >> userInput;
-                                        value = stod(userInput);
+                                        cin >> value;
                                         div(value);
                                 } else if (userInput == '2') {
-                                        cin >> userInput;
-                                        value1 = stod(userInput);
-                                        cin >> userInput;
-                                        value2 = stod(userInput);
+                                        cin >> value1 >> value2;
                                         div(value1, value2);
 				}
 			}
 	} else if (userInput == '2') {
 		cout << "You have chosen advanced arithmetic. Which operation would you like to perform?\n";
+		cout << "1. Pow\n2. Modulo\n";
+		cin >> userInput;
+		if (!isdigit(userInput)) { cout << invalidInput; }
+                        else if (userInput == '1') {
+                                cout << "Pow. One or two inputs?\n";
+                                cout << "1. One input\n2. Two inputs\n";
+                                cin >> userInput;
+                                if (!isdigit(userInput)) { cout << invalidInput; }
+                                else if (userInput == '1') {
+                                        cin >> value;
+                                        power(value);
+                                } else if (userInput == '2') {
+                                        cin >> value1 >> value2;
+                                        power(value1, value2);
+                                }
+                        } else if (userInput == '2') {
+                                cout << "Modulo. One or two inputs?\n";
+                                cout << "1. One input\n2. Two inputs\n";
+                                cin >> userInput;
+                                if (!isdigit(userInput)) { cout << invalidInput; }
+                                else if (userInput == '1') {
+                                        cin >> value;
+                                        mod(value);
+                                } else if (userInput == '2') {
+                                        cin >> value1 >> value2;
+                                        mod(value1, value2);
+                                }
+			}
+		}
 	}
 	void Calc::print(){
                 cout << valOne << " " << op << " " << valTwo << " = " << saveAns << endl;

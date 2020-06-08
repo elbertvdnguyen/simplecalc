@@ -16,7 +16,8 @@ class Calc{
 	  	string promptCalc = "Enter an equation (Use an operator to use a previous answer.) (q to quit): ";
 	  	string invalidInput = "Input is not a number or operator.";
 		string initialStart = "Initializing SimpleCalc. Please wait.";
-	  	string twentyFivePercent = "[||||            ]";
+	  	string zeroPercent = "[                ]";
+		string twentyFivePercent = "[||||            ]";
 	  	string fiftyPercent = "[||||||||        ]";
 	 	string seventyFivePercent = "[||||||||||||    ]";
     		string hundredPercent = "[||||||||||||||||]";
@@ -43,7 +44,7 @@ class Calc{
 		void mod(double, double);
 		void mod(double);
 		double evaluate();
-		void getOp();
+		// void getOp();
 		void display();
 		void print();
 };

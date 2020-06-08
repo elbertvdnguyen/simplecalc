@@ -6,6 +6,8 @@
 using namespace std;
 
 int main() {
-	Calc* = new Calc;
-	display();
+	Calc* calc1 = new Calc;
+	calc1->display();
+
+	return 0;
 }
