@@ -122,10 +122,25 @@ using namespace std;
 		return saveAns;
 	}
         void Calc::getOp(){
-		return;
+		return op;
 	}
-	void Calc::display(){
-		return;
+	void Calc::display() {
+		cout << welcomeUser << "Which operation would you like to perform?\n" << endl;
+		cout << "1. Basic Arithmetic\n2. Advanced Arithmetic\n3. Trigonometric Functions\n4. Conversions\n5. Quit" << endl;
+		cin >> userInput;
+		if (!isdigit(userInput)) { cout << invalidInput; }
+		else if(userInput == '5') {
+			cout << quitInput << "\n" << hundredPercent << "\n" << seventyFivePercent << "\n" << fiftyPercent << "\n" << twentyFivePercent << endl;
+			cout << quitComplete << "\n" << quitMessage << "\n" << borderQuit << endl;
+		} else if (userInput == '1') {
+			cout << "You have chosen basic arithmetic. Which operation would you like to perform?\n" << endl;
+			cout << "1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n";
+			cin >> userInput;
+			if (!isdigit(userInput)) { cout << invalidInput; }
+			else if (userInput == '1') {
+				cout << "Addition. One or two inputs?\n";
+				cout << "1. One input\n2. Two inputs\n";
+				 
 	}
 	void Calc::print(){
                 cout << valOne << " " << op << " " << valTwo << " = " << saveAns << endl;
