@@ -87,16 +87,16 @@ TEST(CalcTest, PowerOneInput){
         EXPECT_DOUBLE_EQ(answer->evaluate(), 13.439799445275185);
 }
 TEST(CalcTest, ModTwoInput){
-        int valOne = 37;
-        int valTwo = 5;
+        double valOne = 40.5;
+        double valTwo = 23.4;
         Calc* answer = new Calc();
         answer->mod(valOne, valTwo);
-        EXPECT_EQ(answer->evaluate(), 2);
+        EXPECT_DOUBLE_EQ(answer->evaluate(), 17.100000000000001);
 }
 TEST(CalcTest, ModOneInput){
-        double valOne = 37;
-        double valTwo = 5;
-        double valThree = 2;
+        double valOne = 40.5;
+        double valTwo = 23.4;
+        double valThree = 17.1;
         Calc* answer = new Calc();
         answer->mod(valOne, valTwo);
         answer->mod(valThree);
