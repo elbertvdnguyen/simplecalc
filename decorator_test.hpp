@@ -89,5 +89,41 @@ TEST(TrigTestSet, OperationThenTan){
 
 }
 
+TEST(TrigTestSet, OperationThenArcSine){
+	double rad1 = 1;
+	double rad2 = 1;
+	Calc* answer = new Calc;
+	answer->mult(rad1, rad2);
+
+	ArcSineCalculation* arcsine = new ArcSineCalculation(answer);	
+	EXPECT_DOUBLE_EQ(arcsine->evaluate(), 1.5707963267948966);
+
+
+}
+
+TEST(TrigTestSet, OperationThenArcCosine){
+	double rad1 = 1;
+	double rad2 = 1;
+	Calc* answer = new Calc;
+	answer->div(rad1, rad2);
+
+	ArcCosineCalculation* arccosine = new ArcCosineCalculation(answer);
+	EXPECT_DOUBLE_EQ(arccosine->evaluate(), 0);
+
+
+}
+
+TEST(TrigTestSet, OperationThenArcTangent){
+	double rad1 = 1;
+	double rad2 = 1;
+	Calc* answer = new Calc;
+	answer->add(rad1, rad1);
+
+	ArcTangentCalculation* arctangent = new ArcTangentCalculation(answer);
+	EXPECT_DOUBLE_EQ(arctangent->evaluate(), 1.1071487177940904);
+
+}
+
+
 
 #endif //DECORATOR_TEST_HPP
