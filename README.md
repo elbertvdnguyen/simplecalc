@@ -17,12 +17,11 @@ We will be coding this calculator in C++.
 - Output: The result from the computation
 ## Design Patterns
 ### Decorator Pattern
-![Decorator Pattern](https://github.com/cs100/final-project-elbert-ken-franz/blob/master/class_diagrams/DecoratorPatternFinalProject.jpg)
+![Decorator Pattern](https://github.com/cs100/final-project-elbert-ken-franz/blob/master/class_diagrams/DecoratorPatternUMPFinalProject.jpg)
 This Pattern is optimized for adding additional functionality to our existing calculator. 
 Our existing calculator is able to perform standard operations on user provided operands. 
-Using a getEvaluate() function, we are able to get the result. 
-With an abstract AdditionalFeatures component, we are able to add conversions into the mix. 
-We can convert the answer into Radians or convert the answer into Degrees.
+Using a getEvaluate() function, we are able to get the result. The Decorator Pattern specializes in it's ability to wrap around a base class to add additional features. This way, we prevent a class explosion and are able to implement these functions more efficiently. With an abstract AdditionalFeatures component, we are able to add conversions into the mix. 
+We can convert the answer into Radians or convert the answer into Degrees. We can also add trigonometric functionality using sine, cosine, tangent, arcsine, arccosine, and arctangent.
 ### Strategy Pattern
 ![Strategy Pattern](https://github.com/cs100/final-project-elbert-ken-franz/blob/master/class_diagrams/StrategyPatternFinalProject.jpg)
 This pattern is created to get the very basic objects and algorithms for our existing calculator working.
