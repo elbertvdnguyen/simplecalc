@@ -11,8 +11,6 @@ class Calc{
 	private:
 	double valOne = 0;
 	double valTwo = 0;
-	int valModOne = 0;
-	int valModTwo = 0;
 	double saveAns = 0;
 	string op = "";
         string promptCalc = "Enter an equation (Use an operator to use a previous answer.) (q to quit): ";
@@ -42,8 +40,8 @@ class Calc{
 	void div(double);
 	void power(double, double);
 	void power(double);
-	void mod(int, int);
-	void mod(int);
+	void mod(double, double);
+	void mod(double);
 	double evaluate();
 	void getOp();
 	void display();
