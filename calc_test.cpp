@@ -87,19 +87,46 @@ TEST(CalcTest, PowerOneInput){
         EXPECT_DOUBLE_EQ(answer->evaluate(), 13.439799445275185);
 }
 TEST(CalcTest, ModTwoInput){
-        int valOne = 37;
-        int valTwo = 5;
+        double valOne = 40.5;
+        double valTwo = 23.4;
         Calc* answer = new Calc();
         answer->mod(valOne, valTwo);
-        EXPECT_EQ(answer->evaluate(), 2);
+        EXPECT_DOUBLE_EQ(answer->evaluate(), 17.100000000000001);
 }
 TEST(CalcTest, ModOneInput){
-        double valOne = 37;
-        double valTwo = 5;
-        double valThree = 2;
+        double valOne = 40.5;
+        double valTwo = 23.4;
+        double valThree = 17.1;
         Calc* answer = new Calc();
         answer->mod(valOne, valTwo);
         answer->mod(valThree);
         EXPECT_EQ(answer->evaluate(), 0);
+}
+TEST(ComboTest, AddSubInput){
+	double valOne = 34.5;
+	double valTwo = 45.6;
+	double valThree = 23.4;
+	Calc* answer = new Calc();
+	answer->add(valOne, valTwo);
+	answer->sub(valThree);
+	EXPECT_DOUBLE_EQ(answer->evaluate(), 56.7);
+}
+TEST(ComboTest, MultDivInput){
+	double valOne = 26.47;
+	double valTwo = 2.87;
+	double valThree = 54.3;
+	Calc* answer = new Calc();
+	answer->mult(valOne, valTwo);
+	answer->div(valThree);
+	EXPECT_DOUBLE_EQ(answer->evaluate(), 1.399058931860037);
+}
+TEST(ComboTest, PowModInput){
+	double valOne = 14.7;
+	double valTwo = 7.5;
+	double valThree = 12.47;
+	Calc* answer = new Calc();
+	answer->power(valOne, valTwo);
+	answer->mod(valThree);
+	EXPECT_DOUBLE_EQ(answer->evaluate(), 2.5288140005296587);	
 }
 #endif //CALC_TEST_CPP
