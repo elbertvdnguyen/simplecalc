@@ -10,6 +10,7 @@ ADD_EXECUTABLE(test
         unit_test.cpp
 	calc.hpp
 	calc.cpp
+	decorator.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
