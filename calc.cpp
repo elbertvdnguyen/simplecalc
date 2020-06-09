@@ -144,7 +144,8 @@ using namespace std;
                 cout << borderWelcome << endl << welcomeUser << endl;
                 cout << borderWelcome << endl;
 		sleep(2);
-
+		
+		while(userInput != '5') {
 		cout << "Which operation would you like to perform?\n" << endl;
 		cout << "1. Basic Arithmetic\n2. Advanced Arithmetic\n3. Trigonometric Functions\n4. Conversions\n5. Quit" << endl;
 		cin >> userInput;
@@ -163,7 +164,7 @@ using namespace std;
 			cout << zeroPercent << endl;
 			sleep(1);
 			cout << quitComplete << "\n" << borderQuit << "\n" << quitMessage << "\n" << borderQuit << endl;
-			exit(1);
+			exit(0);
 		} else if (userInput == '1') {
 			cout << "You have chosen basic arithmetic. Which operation would you like to perform?\n" << endl;
 			cout << "1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n";
@@ -263,23 +264,38 @@ using namespace std;
 		} else if (userInput == '2') {
 			cout << "You have chosen the cosine function. Please input a value: \n";
 			cin >> value;
-			// CosineCalculation(value);
+			Calc* tempCalc = new Calc();
+                        tempCalc->saveAns = value;
+                        CosineCalculation* cosine = new CosineCalculation(tempCalc);
+                        cosine->trigPrint();
 		} else if (userInput == '3') {
 			cout << "You have chosen the tangent function. Please input a value: \n";
 			cin >> value;
-			// TangentCalculation(value);
+			Calc* tempCalc = new Calc();
+                        tempCalc->saveAns = value;
+			TangentCalculation* tangent = new TangentCalculation(tempCalc);
+			tangent->trigPrint();
 		} else if (userInput == '4') {
 			cout << "You have chosen the arcsine function. Please input a value: \n";
 			cin >> value;
-			// ArcSineCalculation(value);
+			Calc* tempCalc = new Calc();
+                        tempCalc->saveAns = value;
+			ArcSineCalculation* arcSine = new ArcSineCalculation(tempCalc);
+			arcSine->trigPrint();
 		} else if (userInput == '5') {
 			cout << "You have chosen the arccosine function. Please input a value: \n";
 			cin >> value;
-			// ArcCosineCalculation(value);
+			Calc* tempCalc = new Calc();
+                        tempCalc->saveAns = value;
+			ArcCosineCalculation* arcCosine = new ArcCosineCalculation(tempCalc);
+			arcCosine->trigPrint();
 		} else if (userInput == '6') {
 			cout << "You have chosen the arctangent function. Please input a value: \n";
 			cin >> value;
-			// ArcTangentCalculation(value);
+			Calc* tempCalc = new Calc();
+                        tempCalc->saveAns = value;
+			ArcTangentCalculation* arcTan = new ArcTangentCalculation(tempCalc);
+			arcTan->trigPrint();
 		}
 	    } else if (userInput == '4') {
 		cout << "You have chosen to convert your answer. Convert to: \n";
@@ -289,13 +305,20 @@ using namespace std;
 		else if (userInput == '1') {
 			cout << "Converting to radians. Please input a value: \n";
 			cin >> value;
-			// ConvertToRadians(value);
+			Calc* tempCalc = new Calc();
+                        tempCalc->saveAns = value;
+			ConvertToRadians* rad = new ConvertToRadians(tempCalc);
+			rad->trigPrint();
 		} else if (userInput == '2') {
 			cout << "Converting to degrees. Please input a value: \n";
 			cin >> value;
-			// ConvertToDegrees(value);
+			Calc* tempCalc = new Calc();
+                        tempCalc->saveAns = value;
+			ConvertToDegrees* deg = new ConvertToDegrees(tempCalc);
+			deg->trigPrint();
 		}
 	     }
+	  }
 	}
 	void Calc::print(){
                 cout << valOne << " " << op << " " << valTwo << " = " << saveAns << endl;
