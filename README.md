@@ -58,3 +58,11 @@ The decorator pattern’s purpose is to ensure more efficient coding when dealin
 The factory pattern was the final piece to tie everything together. Since the project was designed to be user-interactive, we used factory pattern to implement the user interface. This turned out to be simpler than originally thought, though this did require some modification in implementation of the decorators. For the user interface, a menu was ultimately decided upon as we felt it would be the easiest for the end user to understand. The menu would allow user to choose between 4 different categories of mathematical operations (basic/advanced arithmetic, trigonometric functions, conversions), to which they would then choose a specific operation to perform.
 
 ### Final product
+#### Loading sequence
+![](assets/loadingSequenceMenu.png)
+
+#### Menu
+![](assets/menuInputOutput.png)
+
+#### Shutdown sequence
+![](assets/shutdownSequence.png)
