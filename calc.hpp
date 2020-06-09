@@ -14,7 +14,7 @@ class Calc{
 		double saveAns = 0;
 		string op = "";
 	  	string promptCalc = "Enter an equation (Use an operator to use a previous answer.) (q to quit): ";
-	  	string invalidInput = "Input is not a number or operator.";
+	  	string invalidInput = "Input is not valid. Restarting input...\n";
 		string initialStart = "Initializing SimpleCalc. Please wait.";
 	  	string zeroPercent = "[                ]";
 		string twentyFivePercent = "[||||            ]";

@@ -1,4 +1,5 @@
 #include "calc.hpp"
+#include "decorator.hpp"
 
 #include <iostream>
 #include <cmath>
@@ -8,31 +9,12 @@
 #include <ctime>
 #include <cstdlib>
 
-// #include <stdio.h>      /* printf, NULL */
-// #include <stdlib.h>     /* srand, rand */
-// #include <time.h>
 using namespace std;
 
 	Calc::Calc(){
-		srand(time(0));
-		
-		cout << initialStart << endl;
-		sleep(1);
-		cout << zeroPercent << endl;
 		valOne = 0;
-		sleep((rand() % 3) + 1);
-		cout << twentyFivePercent << endl;
 		valTwo = 0;
-		sleep((rand() % 3) + 1);
-		cout << fiftyPercent << endl;
 		saveAns = 0;
-		sleep((rand() % 3) + 1);
-		cout << seventyFivePercent << endl;
-		sleep((rand() % 3) + 1);
-		cout << hundredPercent << endl;
-		cout << initialComplete << endl << switchUser << endl;
-		cout << borderWelcome << endl << welcomeUser << endl; 
-		cout << borderWelcome << endl;
 	}
         void Calc::add(double numOne, double numTwo){
 		valOne = numOne;
@@ -144,12 +126,42 @@ using namespace std;
 		double value2 = 0.0;
 		double value = 0.0;
 		
+		srand(time(0));
+
+                cout << initialStart << endl;
+                sleep(1);
+                cout << zeroPercent << endl;
+                sleep((rand() % 3) + 1);
+                cout << twentyFivePercent << endl;
+                sleep((rand() % 3) + 1);
+                cout << fiftyPercent << endl;
+                sleep((rand() % 3) + 1);
+                cout << seventyFivePercent << endl;
+                sleep((rand() % 3) + 1);
+                cout << hundredPercent << endl;
+                sleep(1);
+                cout << initialComplete << endl << switchUser << endl;
+                cout << borderWelcome << endl << welcomeUser << endl;
+                cout << borderWelcome << endl;
+		sleep(2);
+
 		cout << "Which operation would you like to perform?\n" << endl;
 		cout << "1. Basic Arithmetic\n2. Advanced Arithmetic\n3. Trigonometric Functions\n4. Conversions\n5. Quit" << endl;
 		cin >> userInput;
 		if (!isdigit(userInput)) { cout << invalidInput; }
 		else if(userInput == '5') {
-			cout << quitInput << "\n" << hundredPercent << "\n" << seventyFivePercent << "\n" << fiftyPercent << "\n" << twentyFivePercent << endl;
+			cout << quitInput << "\n";
+			sleep(1);
+			cout << hundredPercent << "\n";
+			sleep((rand() % 3) + 1);
+			cout << seventyFivePercent << "\n";
+			sleep((rand() % 3) + 1);
+			cout << fiftyPercent << "\n";
+			sleep((rand() % 3) + 1);
+			cout << twentyFivePercent << endl;
+			sleep((rand() % 3) + 1);
+			cout << zeroPercent << endl;
+			sleep(1);
 			cout << quitComplete << "\n" << borderQuit << "\n" << quitMessage << "\n" << borderQuit << endl;
 			exit(1);
 		} else if (userInput == '1') {
@@ -236,7 +248,54 @@ using namespace std;
                                         mod(value1, value2);
                                 }
 			}
+		} else if (userInput == '3') {
+		cout << "You have chosen trigonometric. Which operation would you like to perform?\n";
+		cout << "1. Sine\n2. Cosine\n3. Tangent\n4. Arcsine\n5. Arccosine\n6. Arctangent\n";
+		cin >> userInput;
+		if (!isdigit(userInput)) { cout << invalidInput; }
+		else if (userInput == '1') {
+			cout << "You have chosen the sine function. Please input a value: \n";
+			cin >> value;
+			Calc* tempCalc = new Calc();
+			tempCalc->saveAns = value;
+			SineCalculation* sine = new SineCalculation(tempCalc);
+			sine->trigPrint();
+		} else if (userInput == '2') {
+			cout << "You have chosen the cosine function. Please input a value: \n";
+			cin >> value;
+			// CosineCalculation(value);
+		} else if (userInput == '3') {
+			cout << "You have chosen the tangent function. Please input a value: \n";
+			cin >> value;
+			// TangentCalculation(value);
+		} else if (userInput == '4') {
+			cout << "You have chosen the arcsine function. Please input a value: \n";
+			cin >> value;
+			// ArcSineCalculation(value);
+		} else if (userInput == '5') {
+			cout << "You have chosen the arccosine function. Please input a value: \n";
+			cin >> value;
+			// ArcCosineCalculation(value);
+		} else if (userInput == '6') {
+			cout << "You have chosen the arctangent function. Please input a value: \n";
+			cin >> value;
+			// ArcTangentCalculation(value);
 		}
+	    } else if (userInput == '4') {
+		cout << "You have chosen to convert your answer. Convert to: \n";
+		cout << "1. Radians\n2. Degrees\n";
+		cin >> userInput;
+		if (!isdigit(userInput)) { cout << invalidInput; }
+		else if (userInput == '1') {
+			cout << "Converting to radians. Please input a value: \n";
+			cin >> value;
+			// ConvertToRadians(value);
+		} else if (userInput == '2') {
+			cout << "Converting to degrees. Please input a value: \n";
+			cin >> value;
+			// ConvertToDegrees(value);
+		}
+	     }
 	}
 	void Calc::print(){
                 cout << valOne << " " << op << " " << valTwo << " = " << saveAns << endl;
