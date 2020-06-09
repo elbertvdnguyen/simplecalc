@@ -124,6 +124,26 @@ TEST(TrigTestSet, OperationThenArcTangent){
 
 }
 
+TEST(PrintTestSet, sinetest){
+	double rad1 = 0;
+	Calc* answer = new Calc;
+	answer->add(rad1);
+	SineCalculation* sine = new SineCalculation(answer);
+	sine->trigPrint();	
+
+}
+
+TEST(PrintTestSet, arccostest){
+	double rad1 = 0;
+	Calc* answer = new Calc;
+	answer->add(rad1);
+	ArcCosineCalculation* arccosine = new ArcCosineCalculation(answer);
+	arccosine->trigPrint();
+
+
+}
+
+
 
 
 #endif //DECORATOR_TEST_HPP
