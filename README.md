@@ -33,7 +33,7 @@ We can convert the answer into Radians or convert the answer into Degrees. We ca
 
 ### Composite Pattern
 ![Composite Pattern](https://github.com/cs100/final-project-elbert-ken-franz/blob/master/class_diagrams/StrategyPatternFinalProject.jpg)
-This pattern was used in order to create the basic functionality for the class. By using leaves and composites. I was able to implement the basic operations and two more advanced operations while using the implemented evaluate and print functions.
+This pattern was used in order to create the basic functionality for the class by using leaves and composites. I was able to implement the basic operations and two more advanced operations while using the implemented evaluate and print functions. As a result, I was able to implement the basic functionality and thus created the basis for our basic calculator.
 Alongside that, we will have an abstract evaluate component so that we can implement more functions if needed.
 
 ### Factory Pattern
