@@ -31,11 +31,9 @@ Our existing calculator is able to perform standard operations on user provided 
 Using a getEvaluate() function, we are able to get the result. The Decorator Pattern specializes in it's ability to wrap around a base class to add additional features. This way, we prevent a class explosion and are able to implement these functions more efficiently. With an abstract AdditionalFeatures component, we are able to add conversions into the mix. 
 We can convert the answer into Radians or convert the answer into Degrees. We can also add trigonometric functionality using sine, cosine, tangent, arcsine, arccosine, and arctangent.
 
-### Strategy Pattern
-![Strategy Pattern](https://github.com/cs100/final-project-elbert-ken-franz/blob/master/class_diagrams/StrategyPatternFinalProject.jpg)
-This pattern is created to get the very basic objects and algorithms for our existing calculator working.
-Our existing calculator after implementing the strategy pattern will be able to do the following functions:
-Multiply, Divide, Add, Subtract, Power, and Modulo. 
+### Composite Pattern
+![Composite Pattern](https://github.com/cs100/final-project-elbert-ken-franz/blob/master/class_diagrams/StrategyPatternFinalProject.jpg)
+This pattern was used in order to create the basic functionality for the class. By using leaves and composites. I was able to implement the basic operations and two more advanced operations while using the implemented evaluate and print functions.
 Alongside that, we will have an abstract evaluate component so that we can implement more functions if needed.
 
 ### Factory Pattern
