@@ -33,7 +33,7 @@ double ConvertToDegrees::evaluate(){
 
 }
 void ConvertToDegrees::trigPrint(){
-	cout << get_calc()->evaluate() << " in Radians is " << (get_calc()->evaluate() * 180)/M_PI << "in Degrees." << endl;
+	cout << get_calc()->evaluate() << " in Radians is " << (get_calc()->evaluate() * 180)/M_PI << " in Degrees." << endl;
 }
 
 
@@ -44,7 +44,7 @@ double ConvertToRadians::evaluate(){
 
 }
 void ConvertToRadians::trigPrint(){
-	cout << get_calc()->evaluate() << " in Degrees is " << (get_calc()->evaluate() * M_PI)/180 << "in Radians." << endl;
+	cout << get_calc()->evaluate() << " in Degrees is " << (get_calc()->evaluate() * M_PI)/180 << " in Radians." << endl;
 }
 
 SineCalculation::SineCalculation(Calc* calc) : Decorator(calc){};
